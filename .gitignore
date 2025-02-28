@@ -1,0 +1,59 @@
+# Stack build artifacts
+.stack-work/
+dist/
+dist-newstyle/
+
+# Cabal build artifacts
+*.o
+*.hi
+*.dyn_o
+*.dyn_hi
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.tix
+*.lock
+
+# Binary executables
+/**/*.exe
+/**/*.so
+/**/*.dll
+/**/*.dylib
+/**/*.dyn_o
+
+# Haskell IDE/Editor files
+*.hie
+*.hcr
+*.hpc
+
+# MacOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Finder metadata
+Icon?
+._*
+
+# macOS temporary files
+.Spotlight-V100
+.Trashes
+
+# Vim swap and backup files
+*.swp
+*.swo
+*.bak
+
+# Emacs backup files
+*~
+\#*\#
+
+# VSCode settings
+.vscode/
+
+# Stack configuration files
+.stack/
+.stack-work/
+cabal.project.local
+cabal.project.local~ 
