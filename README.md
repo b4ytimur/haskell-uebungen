@@ -1,6 +1,6 @@
 # Haskell Übungen
 
-Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf die Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
+Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
 
 1. **basics** – Einfache Grundlagenübungen für den Einstieg.
 2. **stufe1** – Mittelschwere Aufgaben mit verschiedenen Konzepten aus der funktionalen Programmierung.
@@ -38,12 +38,7 @@ stack test
 ### 3️⃣ **Tests für Stufe 2 ausführen**
 ```bash
 cd stufe2
-stack test
-```
 
-Falls du gezielt bestimmte Tests ausführen möchtest, kannst du folgende Befehle nutzen:
-
-```bash
 stack test :ab49  # Testet alle Aufgaben ab Nummer 49
 stack test :bis49 # Testet alle Aufgaben bis Nummer 49
 ```
