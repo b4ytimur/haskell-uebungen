@@ -43,7 +43,7 @@ tests1 = testGroup "Unit Tests for All Aufgaben"
       ]
   , testGroup "Aufgabe 16: oddDigitNumbers"
       [ testCase "oddDigitNumbers 13" $
-          oddDigitNumbers 13 @?= [1,3,5,7,9,11,13,15,17,19,31,33,35]
+          oddDigitNumbers 13 @?= [1,3,5,7,9,11,13,15,17,19,21,23,25]
       , testCase "oddDigitNumbers 5" $
           oddDigitNumbers 5 @?= [1,3,5,7,9]
       ]
@@ -57,11 +57,11 @@ tests1 = testGroup "Unit Tests for All Aufgaben"
       [ testCase "countQXY \"quax\"" $
           countQXY "quax" @?= 2
       , testCase "countQXY \"xxxyyyqqq\"" $
-          countQXY "xxxyyyqqq" @?= 6
+          countQXY "xxxyyyqqq" @?= 9
       , testCase "countChars \"qxy\" \"qqqquayx\"" $
           countChars "qxy" "qqqquayx" @?= 6
       , testCase "countChars \"abc\" \"aabbccabc\"" $
-          countChars "abc" "aabbccabc" @?= 6
+          countChars "abc" "aabbccabc" @?= 9
       ]
   , testGroup "Aufgabe 19: divisibleBySix / divisibleBy"
       [ testCase "divisibleBySix [1..25]" $
@@ -92,10 +92,10 @@ tests1 = testGroup "Unit Tests for All Aufgaben"
   , testGroup "Aufgabe 26: middleElement"
       [ testCase "middleElement [1,2,3,4,5,6,7]" $
           middleElement [1,2,3,4,5,6,7] @?= 4
-      , testCase "middleElement [1,2,3,4,5,6]" $
-          middleElement [1,2,3,4,5,6] @?= 3
       , testCase "middleElement \"haskell\"" $
           middleElement "haskell" @?= 'k'
+      , testCase "middleElement [1,2,3,4,5,6,7]" $
+          middleElement [1,2,3,4,5,6] @?= 3
       ]
 
   , testGroup "Aufgabe 27: rectangleOfStars"
