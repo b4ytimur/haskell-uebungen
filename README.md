@@ -1,4 +1,4 @@
-# Haskell Klausurvorbereitung
+# Haskell Übungen
 
 Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf die Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
 
