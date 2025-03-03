@@ -1,5 +1,7 @@
 # Haskell Übungen
 
+🚧 **Hinweis:** Es gibt noch einige Probleme mit den Tests, die mit jedem neuen Commit behoben werden. Falls du Fehler findest oder Tests korrigieren möchtest, bist du herzlich eingeladen, Verbesserungen vorzunehmen! 🙌
+
 Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
 
 1. **basics** – Einfache Grundlagenübungen für den Einstieg.
