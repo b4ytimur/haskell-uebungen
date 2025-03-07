@@ -1,20 +1,28 @@
 # Haskell Übungen
 
+<<<<<<< Updated upstream
 🚧 **Hinweis:** Es gibt noch einige Probleme mit den Tests, die mit jedem neuen Commit behoben werden. Falls du Fehler findest oder Tests korrigieren möchtest, bist du herzlich eingeladen, Verbesserungen vorzunehmen! 🙌
 
 Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
+=======
+Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in **verschiedene Schwierigkeitsstufen** unterteilt:
+>>>>>>> Stashed changes
 
 1. **basics** – Einfache Grundlagenübungen für den Einstieg.
 2. **stufe1** – Mittelschwere Aufgaben mit verschiedenen Konzepten aus der funktionalen Programmierung.
 3. **stufe2** – Fortgeschrittene Aufgaben mit komplexeren Strukturen und Algorithmen.
+4. **fortgeschritten** – Erweiterte Konzepte mit Fokus auf **Monaden, Funktoren und IO**.
 
 ## 📂 Struktur des Repositories
 
 ```
 repo
-  ├── basics   # Grundlagenübungen für den Einstieg in Haskell
-  ├── stufe1   # Mittelschwere Aufgaben aus vergangenen Klausuren
-  ├── stufe2   # Fortgeschrittene Aufgaben mit komplexen Datenstrukturen
+  ├── basics           # Grundlagenübungen für den Einstieg in Haskell
+  ├── stufe1           # Mittelschwere Aufgaben aus vergangenen Klausuren
+  ├── stufe2           # Fortgeschrittene Aufgaben mit komplexen Datenstrukturen
+  ├── fortgeschritten  # Themen zu Funktoren, Monaden und IO-Manipulation
+  │   ├── functors-fmaps  # Übungen zu Funktoren und fmap
+  │   ├── monade-io-um    # Übungen zu IO-Manipulationen und Monaden
 ```
 
 ## 🛠 Installation & Nutzung
@@ -45,6 +53,21 @@ stack test :ab49  # Testet alle Aufgaben ab Nummer 49
 stack test :bis49 # Testet alle Aufgaben bis Nummer 49
 ```
 
+### 4️⃣ **Tests für Fortgeschrittene Themen ausführen**
+```bash
+cd fortgeschritten
+
+# Funktoren & fmap
+cd functors-fmaps
+stack test
+
+# IO-Manipulationen & Monaden
+cd ../monade-io-um
+stack test
+```
+
+---
+
 ## 📖 Inhalt der einzelnen Stufen
 
 ### 🔹 **Basics**
@@ -63,6 +86,18 @@ stack test :bis49 # Testet alle Aufgaben bis Nummer 49
 - Typklassen-Instanzen (Functor, Foldable, Num)
 - Implementierung von mathematischen Konzepten
 
+### 🔹 **Fortgeschritten**
+Diese Kategorie deckt fortgeschrittene Haskell-Konzepte ab, darunter:
+- **Funktoren & fmap** (`fortgeschritten/functors-fmaps`)
+  - Implementierung eigener Funktor-Instanzen
+  - Arbeiten mit `fmap`, `Applicative` und `Monad`
+- **Monaden & IO-Manipulation** (`fortgeschritten/monade-io-um`)
+  - Arbeiten mit `IO`-Operationen
+  - Implementierung und Verknüpfung von Monaden
+  - Nutzung von `do`-Notation zur IO-Steuerung
+
+---
+
 ## 🧪 Testen mit HUnit & QuickCheck
 
 Die Aufgaben sind mit **HUnit** getestet. Falls du eigene Tests schreiben oder bestehende Tests erweitern möchtest, kannst du sie in den jeweiligen `test/UnitTest.hs`-Dateien finden.
@@ -75,6 +110,8 @@ tests2 = testGroup "Unit Tests für stufe2"
   ]
 ```
 
+---
+
 ## 🏆 Ziel des Projekts
 
 Dieses Repository soll dir helfen:
@@ -82,14 +119,19 @@ Dieses Repository soll dir helfen:
 - Dich auf Klausuren vorzubereiten 📚
 - Dein funktionales Denken zu verbessern 🏗
 
-Falls du Fehler findest oder Verbesserungen vorschlagen möchtest, kannst du gerne einen Pull-Request erstellen oder eine Issue auf GitHub öffnen! 🚀
+Falls du Fehler findest oder Verbesserungen vorschlagen möchtest, kannst du gerne einen **Pull-Request** erstellen oder eine **Issue** auf GitHub öffnen! 🚀
+
+---
 
 ## 🗂 Ursprung der Aufgaben
-Diese Aufgaben wurden aus verschiedenen Quellen zusammengestellt, insbesondere aus alten Klausuren und Haskell-Übungen auf dem Discord-Server von Tarek (tarek6766). Sie wurden für eine einfache Nutzung formatiert und automatisiert.
+
+Diese Aufgaben wurden aus verschiedenen Quellen zusammengestellt, insbesondere aus alten Klausuren und Haskell-Übungen auf dem Discord-Server von **Tarek (tarek6766)**. Sie wurden für eine einfache Nutzung formatiert und automatisiert.
 
 Falls du Fragen oder Verbesserungsvorschläge hast, erstelle ein **Issue** oder einen **Pull Request**! 🚀
 
 [Server-Link](https://discord.gg/ZpTqM2wMEe)
+
+---
 
 ## Lizenz
 Dieses Projekt ist ausschließlich für Bildungszwecke bestimmt. Die Originalaufgaben stammen aus alten Klausuren und wurden für eine effizientere Vorbereitung formatiert.
