@@ -15,7 +15,7 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
       [ testCase "sumCharCodes \"hallo\"" $
           sumCharCodes "hallo" @?= 528
       , testCase "sumCharCodes \"Hello!\"" $
-          sumCharCodes "Hello!" @?= 500
+          sumCharCodes "Hello!" @?= 533
       , testCase "sumCharCodes \"abc\"" $
           sumCharCodes "abc" @?= 294
       ]
@@ -46,15 +46,17 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
   , testGroup "Aufgabe 64: noSevens"
       [ testCase "take 10 noSevens" $
           take 10 noSevens @?= [1,2,3,4,5,6,8,9,10,11]
-      , testCase "take 15 noSevens" $
-          take 15 noSevens @?= [1,2,3,4,5,6,8,9,10,11,12,13,14,15,16]
+      , testCase "take 20 noSevens" $
+          take 20 noSevens @?= [1,2,3,4,5,6,8,9,10,11,12,13,14,15,16,18,19,20,21,22]
       ]
 
   , testGroup "Aufgabe 65: isDescendingLengths"
       [ testCase "isDescendingLengths [\"Murmeltier\", \"Ozelot\", \"Maus\"]" $
           isDescendingLengths ["Murmeltier", "Ozelot", "Maus"] @?= True
       , testCase "isDescendingLengths [\"Apfel\", \"Birne\", \"Kiwi\"]" $
-          isDescendingLengths ["Apfel", "Birne", "Kiwi"] @?= False
+          isDescendingLengths ["Apfel", "Birne", "Kiwi"] @?= True
+      , testCase "isDescendingLengths [\"Apfel\", \"Erdbeere\", \"Kiwi\"]" $
+          isDescendingLengths ["Apfel", "Erdbeere", "Kiwi"] @?= False
       , testCase "isDescendingLengths []" $
           isDescendingLengths [] @?= True
       ]
@@ -86,8 +88,8 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
           removeNthOccurrence 1 'a' "the walls are coming together" @?= "the wlls are coming together"
       , testCase "removeNthOccurrence 2 'a' \"the walls are coming together\"" $
           removeNthOccurrence 2 'a' "the walls are coming together" @?= "the walls re coming together"
-      , testCase "removeNthOccurrence 3 'a' \"banana banana banana\"" $
-          removeNthOccurrence 3 'a' "banana banana banana" @?= "banana banana bnana"
+      , testCase "removeNthOccurrence 7 'a' \"banana banana banana\"" $
+          removeNthOccurrence 7 'a' "banana banana banana" @?= "banana banana bnana"
       ]
 
   , testGroup "Aufgabe 84: centerString"
@@ -102,10 +104,10 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
   , testGroup "Aufgabe 90: teamsToString / stringToTeams"
       [ testCase "teamsToString [(\"Team 1\", [\"Tarek\", \"Hany\"])]" $
           teamsToString [("Team 1", ["Tarek", "Hany"])] @?= "Team 1: Tarek, Hany"
-      , testCase "stringToTeams \"Team 1: Alice, Bob\\nTeam 2: Charlie\"" $
-          stringToTeams "Team 1: Alice, Bob\nTeam 2: Charlie" @?= [("Team 1", ["Alice", "Bob"]), ("Team 2", ["Charlie"])]
       , testCase "teamsToString [(\"Red\", [\"John\", \"Doe\"]), (\"Blue\", [\"Jane\", \"Smith\"])]" $
           teamsToString [("Red", ["John", "Doe"]), ("Blue", ["Jane", "Smith"])] @?= "Red: John, Doe\nBlue: Jane, Smith"
+      , testCase "stringToTeams \"Team 1: Alice, Bob\\nTeam 2: Charlie\"" $
+          stringToTeams "Team 1: Alice, Bob\nTeam 2: Charlie" @?= [("Team 1", ["Alice", "Bob"]), ("Team 2", ["Charlie"])]
       ]
 
   , testGroup "Aufgabe 93: devilP / allDevils"
