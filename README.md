@@ -1,12 +1,8 @@
 # Haskell Übungen
 
-<<<<<<< Updated upstream
 🚧 **Hinweis:** Es gibt noch einige Probleme mit den Tests, die mit jedem neuen Commit behoben werden. Falls du Fehler findest oder Tests korrigieren möchtest, bist du herzlich eingeladen, Verbesserungen vorzunehmen! 🙌
 
-Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in drei Schwierigkeitsstufen unterteilt:
-=======
 Dieses Repository enthält eine Sammlung von Haskell-Übungsaufgaben zur Vorbereitung auf meine Klausur. Die Aufgaben sind in **verschiedene Schwierigkeitsstufen** unterteilt:
->>>>>>> Stashed changes
 
 1. **basics** – Einfache Grundlagenübungen für den Einstieg.
 2. **stufe1** – Mittelschwere Aufgaben mit verschiedenen Konzepten aus der funktionalen Programmierung.
@@ -124,7 +120,6 @@ Falls du Fehler findest oder Verbesserungen vorschlagen möchtest, kannst du ger
 ---
 
 ## 🗂 Ursprung der Aufgaben
-
 Diese Aufgaben wurden aus verschiedenen Quellen zusammengestellt, insbesondere aus alten Klausuren und Haskell-Übungen auf dem Discord-Server von **Tarek (tarek6766)**. Sie wurden für eine einfache Nutzung formatiert und automatisiert.
 
 Falls du Fragen oder Verbesserungsvorschläge hast, erstelle ein **Issue** oder einen **Pull Request**! 🚀
