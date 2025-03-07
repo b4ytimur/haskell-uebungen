@@ -33,18 +33,18 @@ tests = testGroup "Unit Tests for Stufe2"
       [ testCase "differenceFromMean [1,7,3,5,4]" $
           differenceFromMean [1,7,3,5,4] @?= [3.0,-3.0,1.0,-1.0,0.0]
       , testCase "differenceFromMean [10,20,30,40,50]" $
-          differenceFromMean [10,20,30,40,50] @?= [-20.0,-10.0,0.0,10.0,20.0]
+          differenceFromMean [10,20,30,40,50] @?= [20.0,10.0,0.0,-10.0,-20.0]
       , testCase "differenceFromMean [5]" $
           differenceFromMean [5] @?= [0.0]
       ]
 
   , testGroup "Aufgabe 24: countNodes"
       [ testCase "countNodes on small tree" $
-          countNodes (NT 23 [NT 99 [], NT 3 [NT 0 [], NT 1 []], NT 89 []]) @?= 6
+          countNodes (NT24 23 [NT24 99 [], NT24 3 [NT24 0 [], NT24 1 []], NT24 89 []]) @?= 6
       , testCase "countNodes on single-node tree" $
-          countNodes (NT 42 []) @?= 1
+          countNodes (NT24 42 []) @?= 1
       , testCase "countNodes on larger tree" $
-          countNodes (NT 1 [NT 2 [NT 3 []], NT 4 [], NT 5 [NT 6 [], NT 7 []]]) @?= 7
+          countNodes (NT24 1 [NT24 2 [NT24 3 []], NT24 4 [], NT24 5 [NT24 6 [], NT24 7 []]]) @?= 7
       ]
 
   , testGroup "Aufgabe 35: extractLeaves"
@@ -69,9 +69,9 @@ tests = testGroup "Unit Tests for Stufe2"
       [ testCase "getMatrixRow from 3x3 matrix" $
           getMatrixRow (Ma [[3,7,5],[9,2,0],[5,8,1]]) 2 @?= [7,2,8]
       , testCase "getMatrixRow from 4x4 matrix" $
-          getMatrixRow (Ma [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]) 3 @?= [4,8,12,16]
+          getMatrixRow (Ma [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]) 3 @?= [3,7,11,15]
       , testCase "getMatrixRow from 2x2 matrix" $
-          getMatrixRow (Ma [[1,2],[3,4]]) 1 @?= [2,4]
+          getMatrixRow (Ma [[1,2],[3,4]]) 1 @?= [1,3]
       ]
 
   , testGroup "Aufgabe 54: evaluateTerm"
@@ -104,7 +104,7 @@ tests = testGroup "Unit Tests for Stufe2"
 
   , testGroup "Aufgabe 66: staggeredCharPattern"
       [ testCase "staggeredCharPattern 3 2 1 'o'" $
-          staggeredCharPattern 3 2 1 'o' @?= "  ooo\nooo\n"
+          staggeredCharPattern 3 2 1 'o' @?= " ooo\nooo\n"
       , testCase "staggeredCharPattern 6 3 2 '*'" $
           staggeredCharPattern 6 3 2 '*' @?= "    ******\n  ******\n******\n"
       , testCase "staggeredCharPattern 6 3 (-2) '*'" $
@@ -120,14 +120,69 @@ tests = testGroup "Unit Tests for Stufe2"
           (Dreieck 3 4 5 == Dreieck 3 4 5) @?= True
       ]
 
-  , testGroup "Aufgabe 72: drawTriangle"
-      [ testCase "drawTriangle 4" $
-          drawTriangle 4 @?= "   *\n  ***\n *****\n*******\n"
-      , testCase "drawTriangle 2" $
-          drawTriangle 2 @?= " *\n***\n"
-      , testCase "drawTriangle 5" $
-          drawTriangle 5 @?= "    *\n   ***\n  *****\n *******\n*********\n"
-      ]
+   , testGroup "Aufgabe 72: drawSquare"
+        [ testCase "drawSquare 1" $
+            drawSquare 1 @?= "*\n"
+        , testCase "drawSquare 2" $
+            drawSquare 2 @?= "**\n**\n"
+        , testCase "drawSquare 4" $
+            drawSquare 4 @?= "****\n****\n****\n****\n"
+        , testCase "drawSquare 0 (edge case)" $
+            drawSquare 0 @?= ""
+        , testCase "drawSquare -3 (invalid input)" $
+            drawSquare (-3) @?= ""
+        , testCase "drawSquare 10 (large case)" $
+            drawSquare 10 @?= unlines (replicate 10 (replicate 10 '*'))
+        ]
+
+   , testGroup "Aufgabe 72: drawRectangle"
+        [ testCase "drawRectangle 1x1" $
+            drawRectangle 1 1 @?= "*\n"
+        , testCase "drawRectangle 1x5" $
+            drawRectangle 1 5 @?= "*****\n"
+        , testCase "drawRectangle 3x2" $
+            drawRectangle 3 2 @?= "**\n**\n**\n"
+        , testCase "drawRectangle 0x5 (should return empty string)" $
+            drawRectangle 0 5 @?= ""
+        , testCase "drawRectangle 5x0 (should return empty string)" $
+            drawRectangle 5 0 @?= ""
+        , testCase "drawRectangle -2x4 (invalid input, should return empty string)" $
+            drawRectangle (-2) 4 @?= ""
+        ]
+
+    , testGroup "Aufgabe 72: drawTriangle"
+        [ testCase "drawTriangle 1 (edge case)" $
+            drawTriangle 1 @?= "*\n"
+        , testCase "drawTriangle 2" $
+            drawTriangle 2 @?= " *\n***\n"
+        , testCase "drawTriangle 3" $
+            drawTriangle 3 @?= "  *\n ***\n*****\n"
+        , testCase "drawTriangle 4" $
+            drawTriangle 4 @?= "   *\n  ***\n *****\n*******\n"
+        , testCase "drawTriangle 5" $
+            drawTriangle 5 @?= "    *\n   ***\n  *****\n *******\n*********\n"
+        , testCase "drawTriangle 0 (should return empty string)" $
+            drawTriangle 0 @?= ""
+        , testCase "drawTriangle -1 (invalid input, should return empty string)" $
+            drawTriangle (-1) @?= ""
+        , testCase "drawTriangle 10 (large case)" $
+            drawTriangle 10 @?= "         *\n        ***\n       *****\n      *******\n     *********\n    ***********\n   *************\n  ***************\n *****************\n*******************\n"
+        ]
+
+   , testGroup "Aufgabe 72: drawDiamond"
+        [ testCase "drawDiamond 1" $
+            drawDiamond 1 @?= "*\n"
+        , testCase "drawDiamond 3" $
+            drawDiamond 3 @?= "  *\n ***\n*****\n ***\n  *\n"
+        , testCase "drawDiamond 4 (even input, should behave correctly)" $
+            drawDiamond 4 @?= "   *\n  ***\n *****\n*******\n *****\n  ***\n   *\n"
+        , testCase "drawDiamond 5" $
+            drawDiamond 5 @?= "    *\n   ***\n  *****\n *******\n*********\n *******\n  *****\n   ***\n    *\n"
+        , testCase "drawDiamond 0 (invalid input)" $
+            drawDiamond 0 @?= ""
+        , testCase "drawDiamond -2 (invalid input)" $
+            drawDiamond (-2) @?= ""
+        ]
 
   , testGroup "Aufgabe 74: fifoQueue"
       [ testCase "fifoQueue [1,2,3] 4 7" $
@@ -327,5 +382,3 @@ tests = testGroup "Unit Tests for Stufe2"
           isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]]) @?= False
       ]
   ]
-
-
