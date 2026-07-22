@@ -4,10 +4,16 @@ module Main where
 import Test.Tasty
 import Test.Tasty.HUnit
 import Test.HUnit.Approx
+import Data.List (sortOn)
 import Aufgaben
 
 main :: IO ()
 main = defaultMain tests2
+
+-- Die Reihenfolge bei gleicher Häufigkeit ist laut Aufgabe nicht spezifiziert,
+-- daher werden Ergebnisse vor dem Vergleich normalisiert.
+normFreq :: [(Char, Int)] -> [(Char, Int)]
+normFreq = sortOn (\(c, n) -> (negate n, c))
 
 tests2 :: TestTree
 tests2 = testGroup "Unit Tests for All Aufgaben"
@@ -301,13 +307,13 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
       , testCase "ausgewogen \"∗∗∗?∗ Hundeaugen .,.,.,,, \"" $
           ausgewogen "∗∗∗?∗ Hundeaugen .,.,.,,, " @?= True
       , testCase "ausgewogen \"aeiouäöübcdfg\"" $
-          ausgewogen "aeiouäöübcdfg" @?= True
+          ausgewogen "aeiouäöübcdfg" @?= False
       , testCase "ausgewogen \"AEIOUbcdfg\"" $
           ausgewogen "AEIOUbcdfg" @?= True
       , testCase "ausgewogen \"a\"" $
-          ausgewogen "a" @?= False
+          ausgewogen "a" @?= True
       , testCase "ausgewogen \"h\"" $
-          ausgewogen "h" @?= False
+          ausgewogen "h" @?= True
       , testCase "ausgewogen \"aeiouäöübcd\"" $
           ausgewogen "aeiouäöübcd" @?= False
       , testCase "ausgewogen \"\"" $
@@ -360,7 +366,7 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
       , testCase "triangle [[1],[2,3],[4,5,6]]" $
           triangle [[1],[2,3],[4,5,6]] @?= True
       , testCase "triangle [[],[1],[2,3],[4,5,6]]" $
-          triangle [[],[1],[2,3],[4,5,6]] @?= True
+          triangle [[],[1],[2,3],[4,5,6]] @?= False
       , testCase "triangle [[1],[2,3],[4,5]]" $
           triangle [[1],[2,3],[4,5]] @?= False
       ]
@@ -419,20 +425,26 @@ tests2 = testGroup "Unit Tests for All Aufgaben"
   , testGroup "Aufgabe 154: frequency"
       [ testCase "frequency \"\"" $
           frequency "" @?= []
-      , testCase "frequency \"abc123AB!ax.\"" $
-          frequency "abc123AB!ax.'" @?= [('a',3),('b',2),('x',1),('c',1)]
+      , testCase "frequency \"abc123AB!ax.'\"" $
+          normFreq (frequency "abc123AB!ax.'") @?=
+            [('a',3),('b',2),('c',1),('x',1)]
       , testCase "frequency \"Straßenbahnlinie 6?\"" $
-          frequency "Straßenbahnlinie 6?" @?=
-            [('n',3),('i',2),('e',2),('a',2),('ß',1),('t',1),('s',1),
-             ('r',1),('l',1),('h',1),('b',1)]
+          normFreq (frequency "Straßenbahnlinie 6?") @?=
+            [('n',3),('a',2),('e',2),('i',2),('b',1),('h',1),('l',1),
+             ('r',1),('s',1),('t',1),('ß',1)]
       , testCase "frequency \"HELLO world!!!\"" $
-          frequency "HELLO world!!!" @?= [('l',3),('o',2),('h',1),('e',1),('w',1),('r',1),('d',1)]
+          normFreq (frequency "HELLO world!!!") @?=
+            [('l',3),('o',2),('d',1),('e',1),('h',1),('r',1),('w',1)]
       , testCase "frequency \"AaAaBbBzZzZ\"" $
-          frequency "AaAaBbBzZzZ" @?= [('a',4),('z',4),('b',3)]
+          normFreq (frequency "AaAaBbBzZzZ") @?= [('a',4),('z',4),('b',3)]
       , testCase "frequency \"The quick brown fox jumps over the lazy dog\"" $
-          frequency "The quick brown fox jumps over the lazy dog" @?=
-            [('o',4),('e',3),('h',2),('t',2),('u',2),('i',2),('c',2),('r',2),
-             ('w',2),('n',2),('f',1),('x',1),('j',1),('m',1),('p',1),('s',1),
-             ('v',1),('l',1),('a',1),('z',1),('y',1),('d',1),('g',1)]
+          normFreq (frequency "The quick brown fox jumps over the lazy dog") @?=
+            [('o',4),('e',3),('h',2),('r',2),('t',2),('u',2),
+             ('a',1),('b',1),('c',1),('d',1),('f',1),('g',1),('i',1),('j',1),
+             ('k',1),('l',1),('m',1),('n',1),('p',1),('q',1),('s',1),('v',1),
+             ('w',1),('x',1),('y',1),('z',1)]
+      , testCase "frequency ist absteigend sortiert" $
+          let ns = map snd (frequency "The quick brown fox jumps over the lazy dog")
+          in assertBool "Häufigkeiten sind nicht aufsteigend" (and (zipWith (>=) ns (tail ns)))
       ]
   ]

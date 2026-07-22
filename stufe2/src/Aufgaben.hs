@@ -1,11 +1,10 @@
 module Aufgaben where
 
 --------------------------------------------------------------------------------
--- Aufgabe 14a: Zeilenweise Sternmuster 
--- 
---  Die Funktion `generateStarPattern` erzeugt ein Muster aus dem Zeichen `ch`, 
---  wobei jede Zahl in der Liste angibt, wie viele `ch`-Zeichen in einer Zeile 
---  stehen sollen.
+-- Aufgabe 14a: generateStarPattern
+--  Die Funktion `generateStarPattern` erzeugt ein zeilenweises Muster aus dem
+--  Zeichen `ch`, wobei jede Zahl in der Liste angibt, wie viele `ch`-Zeichen
+--  in einer Zeile stehen sollen.
 --
 --  Beispiele:
 --  generateStarPattern '*' [3,5,2] 
@@ -19,12 +18,10 @@ module Aufgaben where
 generateStarPattern :: Char -> [Int] -> [Char]
 generateStarPattern = undefined
 
-
 --------------------------------------------------------------------------------
--- Aufgabe 14b: Transponierte Darstellung des Sternmusters
---
---  Die Funktion `generateTransposedStarPattern` erzeugt ebenfalls ein Zeichenmuster 
---  mit `ch`, aber die Ausgabe wird so transponiert, dass das höchste Vorkommen einer 
+-- Aufgabe 14b: generateTransposedStarPattern
+--  Die Funktion `generateTransposedStarPattern` erzeugt ebenfalls ein Zeichenmuster
+--  mit `ch`, aber die Ausgabe wird so transponiert, dass das höchste Vorkommen einer
 --  Zahl in der Liste die Anzahl der Zeilen bestimmt.
 --
 --  Beispiele:
@@ -38,17 +35,16 @@ generateStarPattern = undefined
 --     *
 --     *
 --
---  Hinweis:
+--  Hinweise:
 --  - Die vordefinierte Funktion `transpose` aus `Data.List` könnte hilfreich sein.
 --------------------------------------------------------------------------------
 generateTransposedStarPattern :: Char -> [Int] -> [Char]
 generateTransposedStarPattern = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 22: Berechnung nichtleerer Teillisten
---  
---  Die Funktion `nonEmptySublists` gibt alle nichtleeren Teilstrings einer 
---  gegebenen Liste zurück. Jede Teilliste beginnt an einer Position in der 
+-- Aufgabe 22: nonEmptySublists
+--  Die Funktion `nonEmptySublists` gibt alle nichtleeren Teilstrings einer
+--  gegebenen Liste zurück. Jede Teilliste beginnt an einer Position in der
 --  Eingabeliste und enthält alle möglichen Endungen ab dieser Position.
 --
 --  Beispiele:
@@ -62,16 +58,15 @@ nonEmptySublists :: [a] -> [[a]]
 nonEmptySublists = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 23: Differenz mit dem Mittelwert
---
---  Die Funktion `differenceFromMean` berechnet den Mittelwert einer gegebenen 
+-- Aufgabe 23: differenceFromMean
+--  Die Funktion `differenceFromMean` berechnet den Mittelwert einer gegebenen
 --  Liste und gibt für jedes Element die Differenz zu diesem Mittelwert zurück.
 --
 --  Beispiele:
 --  differenceFromMean [1,7,3,5,4]
 --    ~~> [3.0,-3.0,1.0,-1.0,0.0]
 --
---  Erklärung der Signatur-Varianten:
+--  Hinweise zu den Signatur-Varianten:
 --
 --  Variante 1:
 --  differenceFromMean :: (Integral a, Fractional b) => [a] -> [b]
@@ -103,69 +98,62 @@ differenceFromMeanStrange :: (Num a, Show a, Fractional b, Read b) => [a] -> [b]
 differenceFromMeanStrange = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 24: Anzahl der Knoten in einem variadischen Baum
---
+-- Aufgabe 24: countNodes
 --  Ein variadischer Baum ist eine Baumstruktur, in der jeder Knoten eine
---  beliebige Anzahl von Kindknoten haben kann.
---
---  Der Baum ist definiert als:
---  data NTree a = NT a [NTree a] deriving Show
+--  beliebige Anzahl von Kindknoten haben kann. Der Baum ist definiert als:
+--  data NTree24 a = NT24 a [NTree24 a] deriving Show
 --
 --  Die Funktion `countNodes` zählt die Anzahl der Knoten in einem gegebenen Baum.
 --
---  Beispiel:
---  countNodes (NT 23 [NT 99 [], NT 3 [NT 0 [], NT 1 []], NT 89 []])
+--  Beispiele:
+--  countNodes (NT24 23 [NT24 99 [], NT24 3 [NT24 0 [], NT24 1 []], NT24 89 []])
 --    ~~> 6
 --
---  Erklärung:
+--  Hinweise:
 --  - Jeder Knoten wird gezählt, einschließlich des Wurzelknotens.
 --  - Danach wird rekursiv die Anzahl der Knoten in den Kindbäumen summiert.
 --------------------------------------------------------------------------------
+data NTree24 a = NT24 a [NTree24 a] deriving Show
 
-data NTree a = NT a [NTree a] deriving Show
-
-countNodes :: NTree a -> Int
+countNodes :: NTree24 a -> Int
 countNodes = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 35: Extraktion aller Blätter aus einem Binärbaum
---
+-- Aufgabe 35: extractLeaves
 --  Gegeben ist ein Binärbaum, der entweder ein Blatt (`Lf a`) oder ein
 --  Verzweigungsknoten (`Br left right`) ist.
 --
 --  Die Funktion `extractLeaves` extrahiert alle Blätter aus einem Binärbaum
 --  und gibt eine Liste der Blattwerte zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  extractLeaves (Br (Lf 3) (Br (Lf 7) (Lf 3)))
 --    ~~> [3, 7, 3]
 --
---  Erklärung:
+--  Hinweise:
 --  - Wenn der Knoten ein Blatt (`Lf a`) ist, wird der Wert direkt zur Liste
 --    hinzugefügt.
 --  - Wenn es ein Verzweigungsknoten (`Br left right`) ist, werden die Blätter
 --    aus beiden Teilbäumen rekursiv extrahiert und zusammengefügt.
 --------------------------------------------------------------------------------
-
 data Tree35 a = Lf35 a | Br35 (Tree35 a) (Tree35 a)
 
 extractLeaves :: Tree35 a -> [a]
 extractLeaves = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 48: Bestimmen der Anzahl der Elemente in einem Binärbaum
---
+-- Aufgabe 48: treeSize
 --  Gegeben ist ein Binärbaum (`Tree a`), der entweder ein leeres Blatt (`Lf`)
 --  oder ein Verzweigungsknoten (`Br left value right`) ist.
 --
 --  Die Funktion `treeSize` berechnet die Anzahl der gespeicherten Elemente
 --  (Knoten mit Werten) im Baum.
 --
---  Beispiel:
+--  Beispiele:
 --  treeSize (Br (Br Lf 1 Lf) 2 (Br Lf 3 Lf))
 --    ~~> 3
 --
---  Erklärung:
+--  Hinweise:
 --  - Ein leerer Baum (`Lf`) enthält keine Elemente → `size Lf = 0`
 --  - Ein Verzweigungsknoten (`Br left value right`) enthält:
 --      - den aktuellen Wert (`+1`),
@@ -179,7 +167,6 @@ treeSize = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 53: getMatrixRow
---
 --  Eine Matrix ist als Liste ihrer Spaltenvektoren dargestellt:
 --  data Matrix a = Ma [[a]]
 --
@@ -189,11 +176,10 @@ treeSize = undefined
 --  getMatrixRow (Ma [[3,7,5],[9,2,0],[5,8,1]]) 2
 --    ~~> [7,2,8]  (Die zweite Zeile der Matrix)
 --
---  Erklärung:
+--  Hinweise:
 --  - Die Eingabematrix ist als Liste von Spalten gespeichert.
 --  - Die Funktion rekonstruiert die Zeilen der Matrix und gibt die gewünschte Zeile zurück.
 --------------------------------------------------------------------------------
-
 data Matrix a = Ma [[a]]
 
 getMatrixRow :: Matrix a -> Int -> [a]
@@ -201,7 +187,6 @@ getMatrixRow = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 54: evaluateTerm
---
 --  Gegeben ist der algebraische Datentyp `Term a`, der numerische Ausdrücke darstellt:
 --  data Term a = Zahl a
 --              | Summe (Term a) (Term a)
@@ -216,7 +201,6 @@ getMatrixRow = undefined
 --  evaluateTerm (Produkt (Summe (Zahl 2) (Zahl 3)) (Zahl 4))
 --    ~~> 20   ((2 + 3) * 4)
 --------------------------------------------------------------------------------
-
 data Term a = Zahl' a
             | Summe (Term a) (Term a)
             | Produkt (Term a) (Term a)
@@ -226,7 +210,6 @@ evaluateTerm = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 61: isBalancedBrackets
---
 --  Die Funktion prüft, ob in einer Zeichenkette alle Klammern korrekt
 --  geöffnet und geschlossen wurden.
 --
@@ -243,18 +226,16 @@ evaluateTerm = undefined
 --  isBalancedBrackets "())("
 --    ~~> False  (Falsche Reihenfolge)
 --
---  Erklärung:
+--  Hinweise:
 --  - Klammern werden gezählt: `(` erhöht den Zähler, `)` verringert ihn.
 --  - Am Ende sollte der Zähler 0 sein.
 --  - Während des Zählens darf der Zähler nie negativ werden.
 --------------------------------------------------------------------------------
-
 isBalancedBrackets :: String -> Bool
 isBalancedBrackets = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 62: hasDuplicateNodes
---
 --  Gegeben ist der Datentyp für variadische Bäume:
 --  data Tree a = Node a [Tree a] | Leaf a
 --
@@ -270,11 +251,10 @@ isBalancedBrackets = undefined
 --  hasDuplicateNodes (Node 5 [Node 6 [Leaf 4], Node 3 [Leaf 2]])
 --    ~~> False (Alle Knoten sind einzigartig)
 --
---  Erklärung:
+--  Hinweise:
 --  - Alle besuchten Knotenwerte werden gespeichert.
 --  - Falls ein Wert erneut auftaucht, gibt die Funktion `True` zurück.
 --------------------------------------------------------------------------------
-
 data Tree62 a = Node62 a [Tree62 a] | Leaf62 a
 
 hasDuplicateNodes :: Eq a => Tree62 a -> Bool
@@ -282,14 +262,13 @@ hasDuplicateNodes = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 66: staggeredCharPattern
---
 --  Diese Funktion gibt ein stufenförmiges Muster aus Zeichen zurück.
 --  Der dritte Parameter bestimmt, ob das Muster nach rechts (+) oder links (-)
 --  gestaffelt ist.
 --
 --  Beispiele:
 --  staggeredCharPattern 3 2 1 'o'
---    ~~> "  ooo\nooo\n"
+--    ~~> " ooo\nooo\n"
 --
 --  staggeredCharPattern 6 3 2 '*' 
 --    ~~> "    ******\n  ******\n******\n"
@@ -304,13 +283,11 @@ hasDuplicateNodes = undefined
 --     oooooooooo
 --  oooooooooo
 --------------------------------------------------------------------------------
-
 staggeredCharPattern :: Int -> Int -> Int -> Char -> String
 staggeredCharPattern = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 71: Dreieck und Gitter Typklassen-Instanzen
---
+-- Aufgabe 71: Typklassen-Instanzen für Dreieck und Grid
 --  Hier werden Typklassen für zwei benutzerdefinierte Datentypen implementiert:
 --
 --  1) `Dreieck a`: Ein Dreieck mit drei Seitenlängen.
@@ -319,7 +296,6 @@ staggeredCharPattern = undefined
 --  2) `Grid a`: Eine generische Matrixdarstellung.
 --     - Soll Num, Eq, Ord, Functor, Foldable instanziieren.
 --------------------------------------------------------------------------------
-
 data Dreieck a = Dreieck a a a | Failing deriving Show
 newtype Grid a = M [a] deriving Show
 
@@ -350,9 +326,8 @@ instance Foldable Grid where
   foldr = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 72: drawShape
---
---  Die Funktion `drawShape` zeichnet verschiedene geometrische Muster:
+-- Aufgabe 72: drawSquare / drawRectangle / drawTriangle / drawDiamond / drawHourglass
+--  Diese Funktionen zeichnen verschiedene geometrische Muster:
 --
 --  - `drawSquare`: Zeichnet ein Quadrat mit `n` Zeilen und Spalten.
 --  - `drawRectangle`: Zeichnet ein Rechteck mit `n` Zeilen und `m` Spalten.
@@ -386,7 +361,6 @@ instance Foldable Grid where
 --    ***
 --     *
 --------------------------------------------------------------------------------
-
 drawSquare :: Int -> String
 drawSquare = undefined
 
@@ -404,7 +378,6 @@ drawHourglass = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 74: fifoQueue
---
 --  Implementiert das FIFO (First In, First Out) Prinzip:
 --  - Fügt ein Element in eine begrenzte Liste (Queue) ein.
 --  - Falls die maximale Größe erreicht ist, wird das älteste Element entfernt.
@@ -416,13 +389,11 @@ drawHourglass = undefined
 --  fifoQueue [7,1,2,3] 4 8
 --    ~~> [8,7,1,2]
 --------------------------------------------------------------------------------
-
 fifoQueue :: [a] -> Int -> a -> [a]
 fifoQueue = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 77: reimplementPrefixInfixSuffix
---
+-- Aufgabe 77: isPrefixOf' / isInfixOf' / isSuffixOf'
 --  Implementiere die bekannten Funktionen erneut:
 --
 --  - `isPrefixOf`: Prüft, ob die erste Liste ein Präfix der zweiten ist.
@@ -439,7 +410,6 @@ fifoQueue = undefined
 --  isSuffixOf "rocks" "haskell rocks"
 --    ~~> True
 --------------------------------------------------------------------------------
-
 isPrefixOf' :: Eq a => [a] -> [a] -> Bool
 isPrefixOf' = undefined
 
@@ -451,7 +421,6 @@ isSuffixOf' = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 82: isUnimodal
---
 --  Eine Liste heißt unimodal, wenn:
 --   1) Die Elemente zuerst monoton steigen.
 --   2) Danach monoton abfallen.
@@ -463,13 +432,11 @@ isSuffixOf' = undefined
 --  isUnimodal [1,2,3,4,1,2,3,4]
 --    ~~> False
 --------------------------------------------------------------------------------
-
 isUnimodal :: (Ord a) => [a] -> Bool
 isUnimodal = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 102: drawCross
---
 --  Diese Funktion gibt einen String zurück, der ein Kreuz auf der Konsole
 --  darstellt. Die Arme haben die Breite `width` und die Länge `length` und
 --  bestehen aus dem Zeichen `c`.
@@ -497,15 +464,13 @@ isUnimodal = undefined
 --    8888
 --    8888
 --
---  Hinweis: Die Funktion replicate :: Int -> a -> [a] ist hilfreich.
+--  Hinweise: Die Funktion replicate :: Int -> a -> [a] ist hilfreich.
 --------------------------------------------------------------------------------
-
 drawCross :: Int -> Int -> Char -> String
 drawCross = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 107: maxDifference
---
 --  Diese Funktion bestimmt den maximalen positiven Unterschied zwischen zwei
 --  Elementen einer Liste, wobei das zweite Element später in der Liste
 --  erscheinen muss.
@@ -520,13 +485,11 @@ drawCross = undefined
 --  maxDifference [1,5,2,10]
 --    ~~> Just 9   (weil 10 - 1 = 9)
 --------------------------------------------------------------------------------
-
 maxDifference :: [Int] -> Maybe Int
 maxDifference = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 109: foldDigits
---
 --  Diese Funktion nimmt eine Liste von Zahlen und verbindet sie zu einer
 --  einzigen Zahl, indem die Zahlen als aufeinanderfolgende Ziffern betrachtet
 --  werden.
@@ -538,13 +501,11 @@ maxDifference = undefined
 --  foldDigits []
 --    ~~> 0
 --------------------------------------------------------------------------------
-
 foldDigits :: [Int] -> Int
 foldDigits = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 110: Zahlensystem in rekursiver Darstellung
---
+-- Aufgabe 110: intToZahl / zahlToInt / (.+.) / (.-.) / fromString / simulate
 --  Hier wird eine eigene Rekursion für Zahlen definiert.
 --
 --  - `intToZahl`: Konvertiert eine Ganzzahl in die rekursive Struktur.
@@ -572,7 +533,6 @@ foldDigits = undefined
 --  simulate (ADD (LITERAL $ intToZahl 123) (LITERAL $ intToZahl 100))
 --    ~~> intToZahl 223
 --------------------------------------------------------------------------------
-
 data Zahl = NULL
           | EINS
           | ZWEI
@@ -618,7 +578,6 @@ simulate = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 116: commonIndent / filterByIndent
---
 --  Diese Funktionen analysieren die Einrückung von Zeilen in einem Text.
 --
 --  - `commonIndent` gibt den Präfix der Zeilen zurück, die gleich eingerückt sind.
@@ -636,7 +595,6 @@ simulate = undefined
 --  filterByIndent 2 "qwe\nasd\nyxc\n  asd\nadqw"
 --    ~~> ["asd"]
 --------------------------------------------------------------------------------
-
 commonIndent :: String -> String
 commonIndent = undefined
 
@@ -645,12 +603,12 @@ filterByIndent = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 118: isPalindrome / substrings / findPalindromes
---
 --  Diese Funktionen analysieren Zeichenketten auf Palindrome.
 --
 --  - `isPalindrome` prüft, ob ein String ein Palindrom ist.
 --  - `substrings` gibt alle nicht-leeren Teilstrings einer Zeichenkette zurück.
---  - `findPalindromes` sucht alle Teilstrings, die Palindrome sind.
+--  - `findPalindromes` gibt alle palindromischen Teilstrings der Länge >= 2
+--    zurück, aufgezählt nach Startposition und aufsteigender Länge.
 --
 --  Beispiele:
 --
@@ -669,15 +627,11 @@ filterByIndent = undefined
 --         ,"56"]
 --
 --  findPalindromes "123ooffoo456000"
---    ~~> ["ooffoo"]
+--    ~~> ["oo","ooffoo","offo","ff","oo","00","000","00"]
 --
 --  findPalindromes "123ooffo456000"
---    ~~> []
---
---  findPalindromes "123ooffoooof00011000"
---    ~~> ["ooffoo","foooof","00","000","00011000","00","000","11","0110","001100", ...]
+--    ~~> ["oo","offo","ff","00","000","00"]
 --------------------------------------------------------------------------------
-
 isPalindrome :: String -> Bool
 isPalindrome = undefined
 
@@ -689,7 +643,6 @@ findPalindromes = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 123: findCharPositions
---
 --  Diese Funktion sucht nach einem bestimmten Zeichen in einem Text und gibt
 --  dessen Positionen (Zeile und Spalte) zurück.
 --
@@ -709,7 +662,6 @@ findPalindromes = undefined
 --         ,Position {zeile = 2, spalte = 1},Position {zeile = 2, spalte = 41}
 --         ,Position {zeile = 5, spalte = 50},Position {zeile = 5, spalte = 61}]
 --------------------------------------------------------------------------------
-
 data Position = Position {
   zeile :: Int,
   spalte :: Int
@@ -725,7 +677,6 @@ findCharPositions = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 131: findSubtrees / replaceNodes / countLeaves / filterTreeValues
---
 --  Diese Funktionen arbeiten mit einem Binärbaum:
 --
 --  - `findSubtrees` gibt alle Unterbäume zurück, deren Wurzel gleich `element` ist.
@@ -762,7 +713,6 @@ findCharPositions = undefined
 --  filterTreeValues tree even
 --    ~~> [2,6]
 --------------------------------------------------------------------------------
-
 data Tree131 a = Node131 a (Tree131 a) (Tree131 a) | Leaf131 a deriving Show
 
 -- erforderlich für Tests
@@ -786,7 +736,6 @@ filterTreeValues = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 134: isSquareString / isSquareStringInfinite
---
 --  Diese Funktionen überprüfen, ob eine Zeichenkette eine quadratische Struktur hat.
 --  Eine Zeichenkette ist quadratisch, wenn sie genau so viele Zeilen mit gleicher Länge enthält,
 --  wie diese Zeilen lang sind.
@@ -802,7 +751,6 @@ filterTreeValues = undefined
 --  isSquareStringInfinite (cycle "foo\n")  ~~> False
 --  isSquareStringInfinite ("ab\ncd\nxx" ++ [undefined])  ~~> False
 --------------------------------------------------------------------------------
-
 isSquareString :: String -> Bool
 isSquareString = undefined
 
@@ -811,7 +759,6 @@ isSquareStringInfinite = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 137: calculatePrice
---
 --  Diese Funktion berechnet den Preis einer Obstkiste in Cent, wobei Mengenrabatte
 --  für Äpfel und Birnen berücksichtigt werden.
 --
@@ -821,9 +768,8 @@ isSquareStringInfinite = undefined
 --
 --  Beispiele:
 --  calculatePrice [Apfel, Zitrone, Birne, Apfel]  ~~> 396
---  calculatePrice (replicate 6 Apfel ++ replicate 3 Birne)  ~~> 1044
+--  calculatePrice (replicate 6 Apfel ++ replicate 3 Birne)  ~~> 627
 --------------------------------------------------------------------------------
-
 data Obst = Apfel | Birne | Zitrone deriving (Show, Eq)
 
 calculatePrice :: [Obst] -> Int
@@ -831,7 +777,6 @@ calculatePrice = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 140: transformTrafficLightTree
---
 --  Diese Funktion operiert auf einem Baum, dessen Knoten mit Ampelfarben markiert sind:
 --
 --  - Rote Knoten vertauschen die Unterbäume und werden grün.
@@ -846,7 +791,6 @@ calculatePrice = undefined
 --  transformTrafficLightTree (Node Rot (Leaf 1) (Leaf 2)) 
 --    ~~> Node Gruen (Leaf 2) (Leaf 1)
 --------------------------------------------------------------------------------
-
 data Farbe = Rot | Gelb | Gruen deriving (Show, Eq)
 data Ampelbaum a = LeafAB a | NodeAB Farbe (Ampelbaum a) (Ampelbaum a) deriving (Show, Eq)
 
@@ -855,7 +799,6 @@ transformTrafficLightTree = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 143: haveSamePrefixes
---
 --  Diese Funktion überprüft, ob zwei Listen von Listen gleich lange Elemente haben
 --  und jede innere Liste aus `as` ein Präfix der entsprechenden Liste in `bs` ist.
 --
@@ -865,13 +808,11 @@ transformTrafficLightTree = undefined
 --  haveSamePrefixes [] []  ~~> True
 --  haveSamePrefixes [] ["foo"]  ~~> False
 --------------------------------------------------------------------------------
-
 haveSamePrefixes :: Eq a => [[a]] -> [[a]] -> Bool
 haveSamePrefixes = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 144: isWellFormedTree / renderTree / treeHeight / isBalancedTree
---
 --  1) `isWellFormedTree` prüft, ob ein variadischer Baum wohlgeformt ist,
 --     d.h., ob kein Knoten eine leere Liste von Kinderknoten hat.
 --  2) `renderTree` gibt eine indizierte String-Darstellung eines variadischen Baums aus.
@@ -898,7 +839,6 @@ haveSamePrefixes = undefined
 --  isBalancedTree t1  ~~> True
 --  isBalancedTree t2  ~~> False
 --------------------------------------------------------------------------------
-
 data NTree144 a = Node144 [NTree144 a] | Leaf144 a deriving (Show, Eq)
 
 isWellFormedTree :: NTree144 a -> Bool
@@ -915,7 +855,6 @@ isBalancedTree = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 146: figureArea / totalArea / isEqualFigure
---
 --  1) `figureArea` berechnet die Fläche von Kreisen, Rechtecken und Quadraten.
 --  2) `totalArea` berechnet die Gesamtfläche einer Liste von Figuren.
 --  3) `isEqualFigure` definiert eine benutzerdefinierte Eq-Instanz, sodass
@@ -930,7 +869,6 @@ isBalancedTree = undefined
 --  Square 2 == Rectangle 2 2  ~~> True
 --  Square 2.2 == Rectangle 5.7 8.2  ~~> False
 --------------------------------------------------------------------------------
-
 data Figure = Circle { radius :: Double }
             | Rectangle { height :: Double, width :: Double }
             | Square { width :: Double }
@@ -947,40 +885,36 @@ instance Eq Figure where
 
 --------------------------------------------------------------------------------
 -- Aufgabe 147: drawHistogram
---
 --  `drawHistogram` erstellt ein vertikales Histogramm basierend auf einer Liste
 --  von Werten und einem Füllzeichen.
 --
 --  Beispiele:
 --  drawHistogram '*' [3,5,2]  ~~> " * \n * \n** \n***\n***\n"
+--  drawHistogram 'X' [1,5,1,3]  ~~> " X  \n X  \n X X\n X X\nXXXX\n"
 --
 --  putStr $ drawHistogram 'X' [1,5,1,3]
---  X
---  X
---  X X
---  X X
+--   X
+--   X
+--   X X
+--   X X
 --  XXXX
 --------------------------------------------------------------------------------
-
 drawHistogram :: Char -> [Int] -> String
 drawHistogram = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 149: unzipIntoN
---
 --  `unzipIntoN` verteilt die Eingabeliste zyklisch auf `n` Unterlisten.
 --
 --  Beispiele:
 --  unzipIntoN 3 [1..5]  ~~> [[1,4],[2,5],[3]]
 --  unzipIntoN 3 [1..10]  ~~> [[1,4,7,10],[2,5,8],[3,6,9]]
 --------------------------------------------------------------------------------
-
 unzipIntoN :: Int -> [a] -> [[a]]
 unzipIntoN = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 150: isTriangleShapeInfinite / unzipIntoNInfinite
---
 --  `isTriangleShapeInfinite` behandelt Dreieck-Listen mit potenziell unendlichen Listen.
 --  `unzipIntoNInfinite` verarbeitet unendliche Listen korrekt.
 --
@@ -988,7 +922,6 @@ unzipIntoN = undefined
 --  isTriangleShapeInfinite [[1],[2,3],[1..]]  ~~> False
 --  map (take 2) (unzipIntoNInfinite 3 [1..])  ~~> [[1,4],[2,5],[3,6]]
 --------------------------------------------------------------------------------
-
 isTriangleShapeInfinite :: [[a]] -> Bool
 isTriangleShapeInfinite = undefined
 
@@ -997,7 +930,6 @@ unzipIntoNInfinite = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 151: extractDiagonal
---
 --  `extractDiagonal` nimmt aus einer Liste von Listen die Diagonale.
 --  Die Funktion soll mit unendlichen Listen funktionieren.
 --
@@ -1005,21 +937,23 @@ unzipIntoNInfinite = undefined
 --  extractDiagonal [[1],[10,20,30],[100,200,300]]  ~~> [1,20,300]
 --  extractDiagonal ["abc","def","ghi","jklmn","o","pqrstu"]  ~~> "aeim"
 --------------------------------------------------------------------------------
-
 extractDiagonal :: [[a]] -> [a]
 extractDiagonal = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 153: variadicTreeHeight / isVariadicTreeBalanced
---
 --  `variadicTreeHeight` gibt die Höhe eines variadischen Baums zurück.
---  `isVariadicTreeBalanced` prüft, ob der Baum balanciert ist.
+--  `isVariadicTreeBalanced` prüft, ob der Baum balanciert ist, d.h., ob sich
+--  die Höhen der Kinderbäume in jedem Knoten um höchstens 1 unterscheiden
+--  (gleiche Definition wie in Aufgabe 144).
 --
 --  Beispiele:
---  map variadicTreeHeight [tree1, tree2, tree3, tree4]  ~~> [1,2,3,4]
---  map isVariadicTreeBalanced [tree1, tree2, tree3, tree4]  ~~> [True, True, True, False]
+--  variadicTreeHeight (NT153 4 [])  ~~> 1
+--  variadicTreeHeight (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]])  ~~> 3
+--
+--  isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]])  ~~> True
+--  isVariadicTreeBalanced (NT153 1 [NT153 2 [NT153 3 [NT153 4 []]], NT153 5 []])  ~~> False
 --------------------------------------------------------------------------------
-
 data NTree153 a = NT153 a [NTree153 a] deriving (Show, Eq)
 
 variadicTreeHeight :: NTree153 a -> Int

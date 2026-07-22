@@ -43,7 +43,7 @@ tests1 = testGroup "Unit Tests for All Aufgaben"
       ]
   , testGroup "Aufgabe 16: oddDigitNumbers"
       [ testCase "oddDigitNumbers 13" $
-          oddDigitNumbers 13 @?= [1,3,5,7,9,11,13,15,17,19,21,23,25]
+          oddDigitNumbers 13 @?= [1,3,5,7,9,11,13,15,17,19,31,33,35]
       , testCase "oddDigitNumbers 5" $
           oddDigitNumbers 5 @?= [1,3,5,7,9]
       ]
@@ -94,7 +94,7 @@ tests1 = testGroup "Unit Tests for All Aufgaben"
           middleElement [1,2,3,4,5,6,7] @?= 4
       , testCase "middleElement \"haskell\"" $
           middleElement "haskell" @?= 'k'
-      , testCase "middleElement [1,2,3,4,5,6,7]" $
+      , testCase "middleElement [1,2,3,4,5,6]" $
           middleElement [1,2,3,4,5,6] @?= 3
       ]
 

@@ -212,7 +212,7 @@ tests = testGroup "Unit Tests for Stufe2"
       ]
   , testGroup "Aufgabe 102: drawCross"
       [ testCase "drawCross 2 3 '*'" $
-          drawCross 2 3 '*' @?= "  **\n  **\n  **\n********\n********\n  **\n  **\n  **\n"
+          drawCross 2 3 '*' @?= "   **\n   **\n   **\n********\n********\n   **\n   **\n   **\n"
       , testCase "drawCross 4 2 '8'" $
           drawCross 4 2 '8' @?= "  8888\n  8888\n88888888\n88888888\n88888888\n88888888\n  8888\n  8888\n"
       ]
@@ -261,9 +261,9 @@ tests = testGroup "Unit Tests for Stufe2"
       , testCase "isPalindrome \"123123\"" $
           isPalindrome "123123" @?= False
       , testCase "findPalindromes \"123ooffoo456000\"" $
-          findPalindromes "123ooffoo456000" @?= ["ooffoo"]
+          findPalindromes "123ooffoo456000" @?= ["oo","ooffoo","offo","ff","oo","00","000","00"]
       , testCase "findPalindromes \"123ooffo456000\"" $
-          findPalindromes "123ooffo456000" @?= []
+          findPalindromes "123ooffo456000" @?= ["oo","offo","ff","00","000","00"]
       ]
 
   , testGroup "Aufgabe 123: findCharPositions"
@@ -296,7 +296,7 @@ tests = testGroup "Unit Tests for Stufe2"
       [ testCase "calculatePrice [Apfel, Zitrone, Birne, Apfel]" $
           calculatePrice [Apfel, Zitrone, Birne, Apfel] @?= 396
       , testCase "calculatePrice (replicate 6 Apfel ++ replicate 3 Birne)" $
-          calculatePrice (replicate 6 Apfel ++ replicate 3 Birne) @?= 1044
+          calculatePrice (replicate 6 Apfel ++ replicate 3 Birne) @?= 627
       , testCase "calculatePrice [Apfel, Apfel, Apfel, Apfel, Apfel]" $
           calculatePrice [Apfel, Apfel, Apfel, Apfel, Apfel] @?= 299
       ]
@@ -328,7 +328,7 @@ tests = testGroup "Unit Tests for Stufe2"
 
   , testGroup "Aufgabe 146: figureArea"
       [ testCase "figureArea (Circle 3.7)" $
-          figureArea (Circle 3.7) @?= 43.008403427644275
+          let ?epsilon = 1e-9 in figureArea (Circle 3.7) @?~ 43.008403427644275
       , testCase "figureArea (Square 2)" $
           figureArea (Square 2) @?= 4.0
       , testCase "figureArea (Rectangle 3 4)" $
@@ -339,7 +339,7 @@ tests = testGroup "Unit Tests for Stufe2"
       [ testCase "drawHistogram '*' [3,5,2]" $
           drawHistogram '*' [3,5,2] @?= " * \n * \n** \n***\n***\n"
       , testCase "drawHistogram 'X' [1,5,1,3]" $
-          drawHistogram 'X' [1,5,1,3] @?= "X\nX\nX X\nX X\nXXXX\n"
+          drawHistogram 'X' [1,5,1,3] @?= " X  \n X  \n X X\n X X\nXXXX\n"
       ]
 
   , testGroup "Aufgabe 149: unzipIntoN"
@@ -378,7 +378,9 @@ tests = testGroup "Unit Tests for Stufe2"
           isVariadicTreeBalanced (NT153 4 []) @?= True
       , testCase "isVariadicTreeBalanced (NT153 3 [NT153 4 [], NT153 4 []]) == True" $
           isVariadicTreeBalanced (NT153 3 [NT153 4 [], NT153 4 []]) @?= True
-      , testCase "isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]]) == False" $
-          isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]]) @?= False
+      , testCase "isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]]) == True" $
+          isVariadicTreeBalanced (NT153 2 [NT153 4 [], NT153 3 [NT153 4 []]]) @?= True
+      , testCase "isVariadicTreeBalanced (NT153 1 [NT153 2 [NT153 3 [NT153 4 []]], NT153 5 []]) == False" $
+          isVariadicTreeBalanced (NT153 1 [NT153 2 [NT153 3 [NT153 4 []]], NT153 5 []]) @?= False
       ]
   ]

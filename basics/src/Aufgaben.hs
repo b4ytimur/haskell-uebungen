@@ -113,7 +113,6 @@ increasingCharPyramid ch zahl = undefined
 increasingCharPyramidSpaced :: Char -> Int -> String
 increasingCharPyramidSpaced ch zahl = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 10: increasingCharPyramidNewline
 --  Diese Funktion gibt eine Zeichenkette zurück, in der das Zeichen `ch` in 
@@ -128,7 +127,6 @@ increasingCharPyramidSpaced ch zahl = undefined
 --------------------------------------------------------------------------------
 increasingCharPyramidNewline :: Char -> Int -> String
 increasingCharPyramidNewline ch zahl = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 11: mirroredCountdown
@@ -151,7 +149,6 @@ increasingCharPyramidNewline ch zahl = undefined
 mirroredCountdown :: Int -> [Int]
 mirroredCountdown num = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 12: maximumInList
 --  Diese Funktion gibt die größte Zahl in einer Liste zurück.
@@ -162,7 +159,6 @@ mirroredCountdown num = undefined
 --------------------------------------------------------------------------------
 maximumInList :: [Int] -> Int
 maximumInList list = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 13.1: removeDuplicates (nub)
@@ -175,7 +171,6 @@ maximumInList list = undefined
 removeDuplicates :: [Int] -> [Int]
 removeDuplicates list = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 13.2: listIntersection (intersect)
 --  Diese Funktion gibt die gemeinsamen Elemente zweier Listen zurück.
@@ -187,7 +182,6 @@ removeDuplicates list = undefined
 --------------------------------------------------------------------------------
 listIntersection :: [Int] -> [Int] -> [Int]
 listIntersection list1 list2 = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 13.3: listDifference (diff)
@@ -202,7 +196,6 @@ listIntersection list1 list2 = undefined
 listDifference :: [Int] -> [Int] -> [Int]
 listDifference list1 list2 = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 13.4: listUnion (union)
 --  Diese Funktion kombiniert zwei Listen und entfernt doppelte Werte.
@@ -213,7 +206,6 @@ listDifference list1 list2 = undefined
 --------------------------------------------------------------------------------
 listUnion :: [Int] -> [Int] -> [Int]
 listUnion list1 list2 = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 14: zipLists
@@ -227,7 +219,6 @@ listUnion list1 list2 = undefined
 --------------------------------------------------------------------------------
 zipLists :: [Int] -> [Char] -> [(Int,Char)]
 zipLists list1 list2 = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 15: lookupValue
@@ -243,7 +234,6 @@ zipLists list1 list2 = undefined
 --------------------------------------------------------------------------------
 lookupValue :: Char -> [(Char,Int)] -> Int
 lookupValue ch list = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 16: containsNumber
@@ -271,7 +261,6 @@ containsNumber num list = undefined
 firstOccurrence :: String -> Char -> Int
 firstOccurrence text char = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 17.2: allOccurrences
 --  Diese Funktion gibt alle Positionen eines Zeichens in einem String zurück.
@@ -282,7 +271,6 @@ firstOccurrence text char = undefined
 --------------------------------------------------------------------------------
 allOccurrences :: String -> Char -> [Int]
 allOccurrences text char = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 18: charAtPosition
@@ -295,7 +283,6 @@ allOccurrences text char = undefined
 charAtPosition :: String -> Int -> Char
 charAtPosition text position = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 19: sumOfList
 --  Diese Funktion gibt die Summe aller Zahlen in einer Liste zurück.
@@ -306,7 +293,6 @@ charAtPosition text position = undefined
 --------------------------------------------------------------------------------
 sumOfList :: [Int] -> Int
 sumOfList liste = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 20: intListToStringList
@@ -319,7 +305,6 @@ sumOfList liste = undefined
 intListToStringList :: [Int] -> [String]
 intListToStringList liste = undefined
 
-
 --------------------------------------------------------------------------------
 -- Aufgabe 21: intListToString
 --  Diese Funktion konvertiert eine Liste von Zahlen in eine einzige Zeichenkette.
@@ -330,7 +315,6 @@ intListToStringList liste = undefined
 --------------------------------------------------------------------------------
 intListToString :: [Int] -> String
 intListToString liste = undefined
-
 
 --------------------------------------------------------------------------------
 -- Aufgabe 22: rangeToTen

@@ -23,7 +23,7 @@ exceptEveryNth = undefined
 --  Diese Funktion nimmt eine Liste und unterteilt sie in Blöcke der Größe `n`,
 --  die dann jeweils umgedreht werden.
 --
---  Beispiel:
+--  Beispiele:
 --  reverseChunks 3 [8,18,15,20,12,12,14,12,2,19,0]
 --  ~~> [15,18,8,12,12,20,2,12,14,0,19]
 --------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ pairwiseZipWith = undefined
 --  Diese Funktion gibt die Länge des längsten Strings in einer nicht-leeren
 --  Liste von Strings zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  longestStringLength ["Der", "laengste", "String"] ~~> 8
 --------------------------------------------------------------------------------
 longestStringLength :: [String] -> Int
@@ -61,7 +61,7 @@ longestStringLength = undefined
 --  Gibt eine Liste der ersten `n` natürlichen Zahlen zurück, die ausschließlich
 --  ungerade Ziffern enthalten.
 --
---  Beispiel:
+--  Beispiele:
 --  oddDigitNumbers 13 ~~> [1,3,5,7,9,11,13,15,17,19,31,33,35]
 --------------------------------------------------------------------------------
 oddDigitNumbers :: Int -> [Int]
@@ -71,7 +71,7 @@ oddDigitNumbers = undefined
 -- Aufgabe 17: secondToLast
 --  Gibt das vorletzte Element einer Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  secondToLast [1, 2, 3, 4, 5] ~~> 4
 --------------------------------------------------------------------------------
 secondToLast :: [a] -> a
@@ -111,7 +111,7 @@ divisibleBy = undefined
 -- Aufgabe 20: extractJustValues
 --  Extrahiert alle `Just`-Werte aus einer Liste von `Maybe`-Werten.
 --
---  Beispiel:
+--  Beispiele:
 --  extractJustValues [Just 3, Nothing, Just 5] ~~> [3, 5]
 --------------------------------------------------------------------------------
 extractJustValues :: [Maybe a] -> [a]
@@ -121,7 +121,7 @@ extractJustValues = undefined
 -- Aufgabe 25: elementPositions
 --  Gibt eine Liste der Positionen eines bestimmten Elements in einer Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  elementPositions 0 [0,1,5,0,3] ~~> [0,3]
 --------------------------------------------------------------------------------
 elementPositions :: Eq a => a -> [a] -> [Int]
@@ -144,7 +144,7 @@ middleElement = undefined
 --  Erstellt eine quadratische Zeichenmatrix der Größe `n` bestehend aus `*`.
 --  Die Funktion gibt den String zurück, sodass `putStr` das Muster korrekt ausgibt.
 --
---  Beispiel:
+--  Beispiele:
 --  rectangleOfStars 3 ~~> "***\n***\n***"
 --
 --  putStrLn (rectangleOfStars 3)
@@ -172,7 +172,7 @@ allSameLength = undefined
 --  Ergänzt kürzere Strings in einer Liste mit einem bestimmten Zeichen (`c`), 
 --  sodass alle Strings die gleiche Länge haben.
 --
---  Beispiel:
+--  Beispiele:
 --  padLists '+' ["f", "abaz", "bar"] ~~> ["f+++", "abaz", "bar+"]
 --------------------------------------------------------------------------------
 padLists :: Char -> [String] -> [String]
@@ -182,7 +182,7 @@ padLists = undefined
 -- Aufgabe 30: firstNOdds
 --  Gibt die ersten `n` ungeraden Zahlen aus einer Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  firstNOdds 2 [1,2,3,5] ~~> [1,3]
 --------------------------------------------------------------------------------
 firstNOdds :: Int -> [Int] -> [Int]
@@ -192,7 +192,7 @@ firstNOdds = undefined
 -- Aufgabe 31: removeEveryNth
 --  Entfernt jedes `n`-te Element aus einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  removeEveryNth 5 [1,2,3,4,5,6] ~~> [1,2,3,4,6]
 --------------------------------------------------------------------------------
 removeEveryNth :: Int -> [a] -> [a]
@@ -203,7 +203,7 @@ removeEveryNth = undefined
 --  Überprüft, ob Satzzeichen (`.`, `,`, `?`, `!`) korrekt gesetzt sind, d.h.,
 --  direkt nach einem Wort ohne Leerzeichen stehen.
 --
---  Beispiel:
+--  Beispiele:
 --  properPunctuationSpacing "Na, hallo." ~~> True
 --------------------------------------------------------------------------------
 properPunctuationSpacing :: String -> Bool
@@ -224,7 +224,7 @@ hasAdjacentDuplicates = undefined
 -- Aufgabe 34: chunkList
 --  Teilt eine Liste in Blöcke der Länge `n` auf. Der letzte Block darf kürzer sein.
 --
---  Beispiel:
+--  Beispiele:
 --  chunkList 3 [1..7] ~~> [[1,2,3],[4,5,6],[7]]
 --------------------------------------------------------------------------------
 chunkList :: Int -> [a] -> [[a]]
@@ -245,7 +245,7 @@ replaceOccurrences = undefined
 -- Aufgabe 37: consecutivePairs
 --  Erstellt eine Liste von Paaren aus dem `i`-ten und `i+1`-ten Element einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  consecutivePairs [5,8,7,4] ~~> [(5,8),(8,7),(7,4)]
 --------------------------------------------------------------------------------
 consecutivePairs :: [a] -> [(a,a)]
@@ -256,7 +256,7 @@ consecutivePairs = undefined
 --  Teilt eine Liste in zwei Teillisten auf, indem die Elemente abwechselnd 
 --  in die beiden Listen eingefügt werden.
 --
---  Beispiel:
+--  Beispiele:
 --  splitAlternating [7,4,3,2,5] ~~> ([7,3,5],[4,2])
 --------------------------------------------------------------------------------
 splitAlternating :: [a] -> ([a], [a])
@@ -267,7 +267,7 @@ splitAlternating = undefined
 --  Mischt zwei Listen so zusammen, dass abwechselnd Elemente entnommen werden.
 --  Falls eine Liste kürzer ist, werden die verbleibenden Elemente der längeren Liste angehängt.
 --
---  Beispiel:
+--  Beispiele:
 --  interleaveLists [1,3,5] [2,4] ~~> [1,2,3,4,5]
 --------------------------------------------------------------------------------
 interleaveLists :: [a] -> [a] -> [a]
@@ -277,7 +277,7 @@ interleaveLists = undefined
 -- Aufgabe 41: filterSquares
 --  Gibt eine Liste aller Quadratzahlen aus einer Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  filterSquares [1..25] ~~> [1, 4, 9, 16, 25]
 --------------------------------------------------------------------------------
 filterSquares :: (Num a, Integral a) => [a] -> [a]
@@ -287,7 +287,7 @@ filterSquares = undefined
 -- Aufgabe 42: indexedList
 --  Erstellt eine Liste von Paaren aus Index und Wert einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  indexedList "ayq" ~~> [(0, 'a'), (1, 'y'), (2, 'q')]
 --------------------------------------------------------------------------------
 indexedList :: [a] -> [(Int, a)]
@@ -297,7 +297,7 @@ indexedList = undefined
 -- Aufgabe 43a: reverseFirstHalf
 --  Dreht die erste Hälfte einer Liste um und belässt die zweite Hälfte unverändert.
 --
---  Beispiel:
+--  Beispiele:
 --  reverseFirstHalf "foobar" ~~> "oofbar"
 --------------------------------------------------------------------------------
 reverseFirstHalf :: [a] -> [a]
@@ -318,7 +318,7 @@ reverseFirstN = undefined
 -- Aufgabe 44: secondLargest
 --  Gibt das zweitgrößte Element einer Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  secondLargest [1,5,7,3] ~~> 5
 --------------------------------------------------------------------------------
 secondLargest :: Ord a => [a] -> a
@@ -328,7 +328,7 @@ secondLargest = undefined
 -- Aufgabe 45: extractSublist
 --  Extrahiert eine Teilliste zwischen den Indizes `start` (inklusive) und `end` (exklusiv).
 --
---  Beispiel:
+--  Beispiele:
 --  extractSublist 3 8 "abcdefghijklmnopq" ~~> "defgh"
 --------------------------------------------------------------------------------
 extractSublist :: Int -> Int -> [a] -> [a]
@@ -338,7 +338,7 @@ extractSublist = undefined
 -- Aufgabe 46: runLengthEncoding
 --  Komprimiert eine Zeichenkette, indem aufeinanderfolgende Wiederholungen gezählt werden.
 --
---  Beispiel:
+--  Beispiele:
 --  runLengthEncoding "foo baaar" ~~> [('f',1), ('o',2), (' ',1), ('b',1), ('a',3), ('r',1)]
 --------------------------------------------------------------------------------
 runLengthEncoding :: Eq a => [a] -> [(a, Int)]
@@ -348,7 +348,7 @@ runLengthEncoding = undefined
 -- Aufgabe 47: transformString
 --  Ersetzt '.' mit '!' und wandelt alle Kleinbuchstaben in Großbuchstaben um.
 --
---  Beispiel:
+--  Beispiele:
 --  transformString "Hallo." ~~> "HALLO!"
 --------------------------------------------------------------------------------
 transformString :: String -> String
@@ -358,7 +358,7 @@ transformString = undefined
 -- Aufgabe 49: removeEverySecond
 --  Entfernt jedes zweite Element aus einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  removeEverySecond "Huapstkxeilflt" ~~> "Haskell"
 --------------------------------------------------------------------------------
 removeEverySecond :: [a] -> [a]
@@ -368,7 +368,7 @@ removeEverySecond = undefined
 -- Aufgabe 50: sumCharCodes
 --  Gibt die Summe der numerischen ASCII-Werte aller Zeichen einer Zeichenkette zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  sumCharCodes "hallo" ~~> 528
 --------------------------------------------------------------------------------
 sumCharCodes :: String -> Int
@@ -390,7 +390,7 @@ happy = undefined
 -- Aufgabe 59: compressString
 --  Ersetzt aufeinanderfolgende Buchstaben durch eine Zählung der Wiederholungen.
 --
---  Beispiel:
+--  Beispiele:
 --  compressString "piii bbblii blaa blllup" ~~> "pi3 b3li2 bla2 bl3up"
 --------------------------------------------------------------------------------
 compressString :: String -> String
@@ -400,7 +400,7 @@ compressString = undefined
 -- Aufgabe 63: addLineNumbers
 --  Fügt Zeilennummern zu einem gegebenen Text hinzu.
 --
---  Beispiel:
+--  Beispiele:
 --  addLineNumbers "Ein Hund\nlief um die\nEcke"
 --  ~~> "1 Ein Hund\n2 lief um die\n3 Ecke"
 --------------------------------------------------------------------------------
@@ -411,7 +411,7 @@ addLineNumbers = undefined
 -- Aufgabe 64: noSevens
 --  Gibt eine unendliche Liste natürlicher Zahlen zurück, in denen die Ziffer '7' nicht vorkommt.
 --
---  Beispiel:
+--  Beispiele:
 --  take 10 noSevens ~~> [1,2,3,4,5,6,8,9,10,11]
 --------------------------------------------------------------------------------
 noSevens :: [Int]
@@ -421,7 +421,7 @@ noSevens = undefined
 -- Aufgabe 65: isDescendingLengths
 --  Überprüft, ob jede Liste in einer Liste von Listen kürzer oder gleich lang wie die vorherige ist.
 --
---  Beispiel:
+--  Beispiele:
 --  isDescendingLengths ["Murmeltier", "Ozelot", "Maus"] ~~> True
 --------------------------------------------------------------------------------
 isDescendingLengths :: [[a]] -> Bool
@@ -431,7 +431,7 @@ isDescendingLengths = undefined
 -- Aufgabe 67: rowWiseDotProduct
 --  Berechnet für jede Zeile das Skalarprodukt mit der entsprechenden Zeile aus einer zweiten Matrix.
 --
---  Beispiel:
+--  Beispiele:
 --  rowWiseDotProduct [[1,2],[3,4],[5,6]] [[3,4],[5,6],[7,8]]
 --  ~~> [11,39,83]
 --------------------------------------------------------------------------------
@@ -442,7 +442,7 @@ rowWiseDotProduct = undefined
 -- Aufgabe 68: matrixMultiply
 --  Berechnet das Produkt zweier Matrizen.
 --
---  Beispiel:
+--  Beispiele:
 --  matrixMultiply [[1,2],[3,4]] [[5,6],[7,8]]
 --  ~~> [[19,22],[43,50]]
 --------------------------------------------------------------------------------
@@ -453,7 +453,7 @@ matrixMultiply = undefined
 -- Aufgabe 78: removeConsecutiveDuplicates
 --  Entfernt aufeinanderfolgende gleiche Zeichen aus einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  removeConsecutiveDuplicates "I,,   the   machhhhhine    "
 --  ~~> "I, the machine "
 --------------------------------------------------------------------------------
@@ -464,7 +464,7 @@ removeConsecutiveDuplicates = undefined
 -- Aufgabe 80: removeNthOccurrence
 --  Entfernt das `i`-te Vorkommen eines Elements in einer Liste.
 --
---  Beispiel:
+--  Beispiele:
 --  removeNthOccurrence 1 'a' "the walls are coming together"
 --  ~~> "the wlls are coming together"
 --------------------------------------------------------------------------------
@@ -487,7 +487,7 @@ centerString = undefined
 -- Aufgabe 90: teamsToString / stringToTeams
 --  Konvertiert eine Liste von Teams in einen String und umgekehrt.
 --
---  Beispiel:
+--  Beispiele:
 --  teamsToString [("Team 1",["Tarek","Hany"]), ("Team 2",["Mike"])]
 --  ~~> "Team 1: Tarek, Hany\nTeam 2: Mike"
 --------------------------------------------------------------------------------
@@ -502,7 +502,7 @@ stringToTeams = undefined
 --  Prüft, ob die Ziffernfolge '666' in einer Zahl vorkommt.
 --  Gibt eine unendliche Liste aller Teufelszahlen zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  take 10 allDevils
 --  ~~> [666,1666,2666,3666,4666,5666,6660,6661,6662,6663]
 --------------------------------------------------------------------------------
@@ -517,7 +517,7 @@ allDevils = undefined
 --  Erstellt ein Dreieck in der angegebenen Breite `width` mit Zeichen `c`
 --  und platziert einen Text daneben.
 --
---  Beispiel:
+--  Beispiele:
 --  importantMessage 3 '*' "wichtig!"
 --  ~~> "*\n**\n***   wichtig!\n**\n*"
 --------------------------------------------------------------------------------
@@ -528,7 +528,7 @@ importantMessage = undefined
 -- Aufgabe 98: lengthOfLongestString
 --  Gibt die Länge des längsten Strings in einer nichtleeren Liste zurück.
 --
---  Beispiel:
+--  Beispiele:
 --  lengthOfLongestString ["Der", "laengste", "String"]
 --  ~~> 8
 --------------------------------------------------------------------------------
@@ -539,7 +539,7 @@ lengthOfLongestString = undefined
 -- Aufgabe 99: numbersWithOddDigits
 --  Gibt die ersten n positiven Zahlen zurück, die nur ungerade Ziffern enthalten.
 --
---  Beispiel:
+--  Beispiele:
 --  numbersWithOddDigits 13
 --  ~~> [1,3,5,7,9,11,13,15,17,19,31,33,35]
 --------------------------------------------------------------------------------
@@ -555,7 +555,6 @@ numbersWithOddDigits = undefined
 --  addnNumbers [1 .. 10] 3 ~~> [6,15,24,10]
 --  take 5 $ addnNumbers [1 ..] 5 ~~> [15,40,65,90,115]
 --------------------------------------------------------------------------------
-
 addnNumbers :: [Int] -> Int -> [Int]
 addnNumbers = undefined
 
@@ -570,7 +569,6 @@ addnNumbers = undefined
 --  isTriangNum 36 ~~> True
 --  isTriangNum 99 ~~> False
 --------------------------------------------------------------------------------
-
 triangNums :: [Int]
 triangNums = undefined
 
@@ -586,7 +584,6 @@ isTriangNum = undefined
 --  inits "abc" ~~> ["","a","ab","abc"]
 --  tails "abc" ~~> ["abc","bc","c",""]
 --------------------------------------------------------------------------------
-
 inits :: [a] -> [[a]]
 inits = undefined
 
@@ -605,7 +602,6 @@ tails = undefined
 --  lastIntSubstring "ta12re65zt" ~~> Just 65
 --  lastIntSubstring "tarezt" ~~> Nothing
 --------------------------------------------------------------------------------
-
 lastIntDigit :: String -> Maybe Int
 lastIntDigit = undefined
 
@@ -621,7 +617,6 @@ lastIntSubstring = undefined
 --  foldDigits [1,2,3,45,6,789] ~~> 123456789
 --  foldDigits [] ~~> 0
 --------------------------------------------------------------------------------
-
 foldDigits :: [Int] -> Int
 foldDigits = undefined
 
@@ -638,7 +633,6 @@ foldDigits = undefined
 --  containsInOrder [1,2,3] [6,5,4,3,2,1] ~~> False
 --  containsInOrder [1,2,3] [6,2,4,1,2,9,9,3] ~~> True
 --------------------------------------------------------------------------------
-
 containsAll :: Eq a => [a] -> [a] -> Bool
 containsAll = undefined
 
@@ -649,10 +643,9 @@ containsInOrder = undefined
 -- Aufgabe 119: greater
 --  Gibt alle Elemente aus einer Liste zurück, die größer als das angegebene Element sind.
 --
---  Beispiel:
+--  Beispiele:
 --  greater (5,[1,2,3,4,5,6,7,8,9,10]) ~~> [6,7,8,9,10]
 --------------------------------------------------------------------------------
-
 greater :: Ord a => (a, [a]) -> [a]
 greater = undefined
 
@@ -667,7 +660,6 @@ greater = undefined
 --  intercalate' ", " ["a", "b", "c"] ~~> "a, b, c"
 --  intersperse' ',' "hello" ~~> "h,e,l,l,o"
 --------------------------------------------------------------------------------
-
 replicate' :: Int -> a -> [a]
 replicate' = undefined
 
@@ -695,7 +687,6 @@ intersperse' = undefined
 --  allSatisfy (\l -> odd (length l)) ["qwe","1","qweasdy"] ~~> True
 --  allSatisfy (\l -> even (length l)) ["qwe","1","qweasdy"] ~~> False
 --------------------------------------------------------------------------------
-
 allOddLength :: [[a]] -> Bool
 allOddLength = undefined
 
@@ -717,7 +708,6 @@ allSatisfy = undefined
 --  quadi (cycle "foo\n") ~~> False
 --  quadi ("ab\ncd\nxx" ++ [undefined]) ~~> False
 --------------------------------------------------------------------------------
-
 quad :: String -> Bool
 quad = undefined
 
@@ -728,7 +718,8 @@ quadi = undefined
 -- Aufgabe 133: beifang / avgHering / avgKabeljau / avgSeelachs
 --  `beifang` entfernt alle Fische aus der Liste, deren Gewicht unter dem Mindestgewicht liegt.
 --  `avgHering`, `avgKabeljau` und `avgSeelachs` berechnen das durchschnittliche
---  Gewicht der jeweiligen Fischart in einem Fang.
+--  Gewicht der jeweiligen Fischart in einem Fang (ganzzahlig, abgerundet).
+--  Bei leerer Liste bzw. ohne Fische der jeweiligen Art ist das Ergebnis 0.
 --
 --  Mindestgewichte:
 --  - Hering:   200g
@@ -741,7 +732,6 @@ quadi = undefined
 --  avgKabeljau fang1 ~~> 1555
 --  avgSeelachs fang1 ~~> 2107
 --------------------------------------------------------------------------------
-
 data Fisch = Hering {gewicht :: Int}
            | Kabeljau {gewicht :: Int}
            | Seelachs {gewicht :: Int}
@@ -780,7 +770,6 @@ avgSeelachs = undefined
 --  preis [Apfel, Zitrone, Birne, Apfel] ~~> 396
 --  preis (k1 ++ k1 ++ k1) ~~> 1044
 --------------------------------------------------------------------------------
-
 data Obst = Apfel | Birne | Zitrone
     deriving (Eq, Show)
 
@@ -807,7 +796,6 @@ preis = undefined
 --  ausgewogen "Schraubstock" ~~> False
 --  ausgewogen "∗∗∗?∗ Hundeaugen .,.,.,,, " ~~> True
 --------------------------------------------------------------------------------
-
 ausgewogen :: String -> Bool
 ausgewogen = undefined
 
@@ -830,7 +818,6 @@ ausgewogen = undefined
 --  centertext "This\nis\na\nstring!"
 --  ~~> " This  \n  is   \n   a   \nstring!\n"
 --------------------------------------------------------------------------------
-
 center :: Int -> String -> String
 center = undefined
 
@@ -845,10 +832,9 @@ centertext = undefined
 --  Gibt eine Liste von Paaren (x, i) zurück, wobei x das jeweilige Listenelement
 --  ist und i die Position in der Liste (beginnend mit 1).
 --
---  Beispiel:
+--  Beispiele:
 --  positions "Foo" ~~> [('F',1),('o',2),('o',3)]
 --------------------------------------------------------------------------------
-
 positions :: [a] -> [(a, Int)]
 positions = undefined
 
@@ -857,17 +843,16 @@ positions = undefined
 --  `rpad` füllt alle Listen in einer Liste von Listen auf die Länge der längsten
 --  Liste mit dem angegebenen Füllzeichen auf.
 --
---  Beispiel:
+--  Beispiele:
 --  rpad '*' ["abcde","fgh","uvwxyz"] ~~> ["abcde*","fgh***","uvwxyz"]
 --
 --  `rpadinf` ist eine erweiterte Version von `rpad`, die auch mit unendlichen
 --  Listen korrekt funktioniert.
 --
---  Beispiel:
+--  Beispiele:
 --  map (take 5) $ rpadinf 0 [[1,3 ..],[1 ..],[7,9]] ==
 --    [[1,3,5,7,9],[1,2,3,4,5],[7,9,0,0,0]]
 --------------------------------------------------------------------------------
-
 rpad :: a -> [[a]] -> [[a]]
 rpad = undefined
 
@@ -883,7 +868,6 @@ rpadinf = undefined
 --  triangle ["a","xy","123"] ~~> True
 --  triangle [[1],[2,3],[3]] ~~> False
 --------------------------------------------------------------------------------
-
 triangle :: [[a]] -> Bool
 triangle = undefined
 
@@ -901,7 +885,6 @@ triangle = undefined
 --  trimTrailingSpacesList ["pain","pain ","  sadness and sorrow   ","sadness and sorrow"]
 --  ~~> ["pain","pain","  sadness and sorrow","sadness and sorrow"]
 --------------------------------------------------------------------------------
-
 trimTrailingSpaces :: String -> String
 trimTrailingSpaces = undefined
 
@@ -912,7 +895,7 @@ trimTrailingSpacesList = undefined
 -- Aufgabe 152: diamond
 --  Erzeugt eine Raute aus einem gegebenen Zeichen mit einer bestimmten Kantenlänge.
 --
---  Beispiel:
+--  Beispiele:
 --  diamond 'x' 1 ~~> "x\n"
 --  diamond '*' 5 ~~> 
 --      "    *\n"
@@ -930,7 +913,6 @@ trimTrailingSpacesList = undefined
 --  - Zeile i (1 ≤ i ≤ 2n - 1) besteht aus (n - j) Leerzeichen, gefolgt von (2j - 1) Zeichen.
 --  - j = i für i ≤ n, sonst j = 2n - i.
 --------------------------------------------------------------------------------
-
 diamond :: Char -> Int -> String
 diamond = undefined
 
@@ -956,6 +938,5 @@ diamond = undefined
 --  - `toLower :: Char -> Char` konvertiert Buchstaben zu Kleinbuchstaben.
 --  - `sortOn :: Ord b => (a -> b) -> [a] -> [a]` sortiert nach einer bestimmten Eigenschaft.
 --------------------------------------------------------------------------------
-
 frequency :: String -> [(Char, Int)]
 frequency = undefined

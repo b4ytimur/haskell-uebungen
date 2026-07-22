@@ -38,15 +38,15 @@ stack test
 ### 2️⃣ **Tests für Stufe 1 ausführen**
 ```bash
 cd stufe1
-stack test
+
+stack test :bis49 # Testet alle Aufgaben bis Nummer 49
+stack test :ab49  # Testet alle Aufgaben ab Nummer 49
 ```
 
 ### 3️⃣ **Tests für Stufe 2 ausführen**
 ```bash
 cd stufe2
-
-stack test :ab49  # Testet alle Aufgaben ab Nummer 49
-stack test :bis49 # Testet alle Aufgaben bis Nummer 49
+stack test
 ```
 
 ### 4️⃣ **Tests für Fortgeschrittene Themen ausführen**

@@ -20,7 +20,7 @@ tests = testGroup "Unit Tests for Functors-fmaps"
       , testCase "Functor-Gesetz: fmap (+1) (Curried \"Test\" 5)" $
           fmap (+1) (Curried "Test" 5) @?= Curried "Test" 6
       , testCase "Functor-Gesetz: fmap show (Element3 (Curried 1 2))" $
-          fmap show (Element3 (Curried 1 2)) @?= Element3 (Curried 1 "2")
+          fmap show (Element3 (Curried (1 :: Int) 2)) @?= Element3 (Curried "1" "2")
       , testCase "Functor-Gesetz: fmap (\\x -> x * 2) (Element4 (Curried 2 3))" $
           fmap (\x -> x * 2) (Element4 (Curried 2 3)) @?= Element4 (Curried 4 6)
       , testCase "Functor-Gesetz: fmap (*2) (Element5 (Curried \"x\" 10))" $
@@ -38,7 +38,7 @@ tests = testGroup "Unit Tests for Functors-fmaps"
       , testCase "fmap (*2) auf Binaerbaum" $
           fmap (*2) (Knoten (Blatt 1) 2 (Blatt 3)) @?= Knoten (Blatt 2) 4 (Blatt 6)
       , testCase "fmap id auf leeren Binaerbaum" $
-          fmap id LeerBaum @?= LeerBaum
+          fmap id (LeerBaum :: Binaerbaum Int) @?= LeerBaum
       , testCase "fmap show auf Binaerbaum" $
           fmap show (Knoten (Blatt 5) 6 (Blatt 7)) @?= Knoten (Blatt "5") "6" (Blatt "7")
 

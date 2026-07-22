@@ -2,7 +2,6 @@ module Aufgaben where
 
 --------------------------------------------------------------------------------
 -- Aufgabe 40: Functor-Instanzen für Element und Curry
---
 --  Implementiere Instanzen der Typklasse `Functor` für verschiedene Varianten
 --  des Datentyps `Element` und `Curry`. Die `Functor`-Instanz sollte sich 
 --  gemäß den Functor-Gesetzen verhalten.
@@ -58,34 +57,32 @@ module Aufgaben where
 --
 --     Definiere eine Instanz für die Typklasse `Functor`.
 --------------------------------------------------------------------------------
-
-newtype Element1 a = Element1 a
+newtype Element1 a = Element1 a deriving (Show, Eq)
 instance Functor Element1 where
   fmap = undefined
 
-newtype Element2 a = Element2 (Int, a)
+newtype Element2 a = Element2 (Int, a) deriving (Show, Eq)
 instance Functor Element2 where
   fmap = undefined
 
-data Curry a b = Curried a b
+data Curry a b = Curried a b deriving (Show, Eq)
 instance Functor (Curry a) where
   fmap = undefined
 
-newtype Element3 a = Element3 (Curry a a)
+newtype Element3 a = Element3 (Curry a a) deriving (Show, Eq)
 instance Functor Element3 where
   fmap = undefined
 
-newtype Element4 a = Element4 (Curry a a)
+newtype Element4 a = Element4 (Curry a a) deriving (Show, Eq)
 instance Functor Element4 where
   fmap = undefined
 
-newtype Element5 a b = Element5 (Curry a b)
+newtype Element5 a b = Element5 (Curry a b) deriving (Show, Eq)
 instance Functor (Element5 a) where
   fmap = undefined
 
 --------------------------------------------------------------------------------
 -- Aufgabe 60: Functor-Instanzen für benutzerdefinierte Baumstrukturen und Listen
---
 --  Implementiere Instanzen der Typklasse `Functor` für folgende algebraische
 --  Datentypen:
 --
@@ -102,7 +99,6 @@ instance Functor (Element5 a) where
 --  4) `T c n x` ist eine komplexere rekursive Struktur mit mehreren Typparametern.
 --     Definiere eine `Functor`-Instanz für `(T c n)`.
 --------------------------------------------------------------------------------
-
 data List a = Element a (List a) | Leer deriving (Show, Eq)
 instance Functor List where
   fmap = undefined
@@ -120,8 +116,7 @@ instance Functor (T c n) where
   fmap = undefined
 
 --------------------------------------------------------------------------------
--- Aufgabe 71: Instanzierung von Typklassen für Dreieck und Grid
---
+-- Aufgabe 71: Typklassen-Instanzen für Dreieck und Grid
 --  Implementiere die folgenden Typklassen-Instanzen für die gegebenen Datentypen:
 --
 --  1) `Dreieck a` ist eine Struktur, die entweder drei Werte des gleichen Typs 
@@ -140,7 +135,6 @@ instance Functor (T c n) where
 --     - `Functor`
 --     - `Foldable`
 --------------------------------------------------------------------------------
-
 data Dreieck a = Dreieck a a a | Failing deriving (Show)
 instance Eq a => Eq (Dreieck a) where
   (==) = undefined
